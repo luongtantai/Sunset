@@ -1,0 +1,31 @@
+// variables and mixins
+@import "core/reset";
+@import "core/variables";
+@import "core/mixins";
+
+
+@import "core/layout";
+@import "core/element";
+@import "core/component";
+@import "core/librarys";
+
+@import "core/loading";
+
+// navigation, header, footer
+@import "core/header";
+@import "core/nav";
+@import "core/footer";
+
+// pages
+@import "pages/home";
+@import "pages/aboutus";
+@import "pages/service";
+@import "pages/event";
+@import "pages/menu";
+@import "pages/destination";
+@import "pages/library";
+@import "pages/contact";
+@import "pages/detailedservice";
+@import "pages/detailedevent";
+@import "pages/detaileddestination";
+@import "pages/detailedblog";

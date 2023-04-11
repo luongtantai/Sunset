@@ -1,0 +1,934 @@
+.load_mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: #090c0f;
+    pointer-events: auto;
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s ease-in-out;
+    &.active {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    @keyframes bounce-loader {
+        to {
+        opacity: 0.1;
+        transform: translateY(-1rem);
+        }
+    }
+    .bounce-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    }
+
+    .bounce-loading > div {
+    width: 1rem;
+    height: 1rem;
+    margin: 0 0.5rem;
+    background: #8385aa;
+    border-radius: 50%;
+    animation: bounce-loader 0.6s infinite alternate;
+    }
+
+    .bounce-loading > div:nth-child(2) {
+    animation-delay: 0.15s;
+    }
+
+    .bounce-loading > div:nth-child(3) {
+    animation-delay: 0.3s;
+    }
+
+    .bounce-loading > div:last-child {
+    animation-delay: 0.45s;
+    }
+}
+.--headingh2{
+    font-family: ol;
+    font-size: var(--h2-fs);
+    line-height: 54px;
+    letter-spacing: normal;
+    margin-bottom: 14px;
+}
+.abhero{
+    width: 100%;
+    position: relative;
+    .container{
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    &__text{
+        width: 100%;
+        padding-block: 223px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-title{
+            @include text(40px, "ol", 54px, inherit, capitalize);
+        }
+        &-cta{
+            display: flex;
+            gap: 8px;
+            .textleft{
+                @include text(16px, "ol", 24px, $background-brown, capitalize);
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                &:after{
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    background: $background-brown;
+                    @include transform(rotate(45deg));
+                }
+            }
+            .textright{
+                @include text(16px, "ol", 24px, inherit, capitalize);
+                text-decoration: none;
+            }
+        }
+    }
+    &__bg{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        img{
+            @include midimg;
+        }
+    }
+    @include sm{
+        &__text{
+            padding-block: 134px;
+            &-title{
+                @include text(30px, "ol", 54px, inherit, capitalize);
+            }
+        &-cta{
+            .textleft{
+                @include text(16px, "ol", 24px, $background-brown, capitalize);
+            }
+            .textright{
+                @include text(16px, "ol", 24px, inherit, capitalize);
+            }
+        }
+    }
+    }
+    @include xs{
+        &__text{
+            padding-block: 80px;
+             flex-direction: column;
+             gap: 8px;
+            &-title{
+                @include text(30px, "ol", 54px, inherit, capitalize);
+            }
+        &-cta{
+            .textleft{
+                @include text(16px, "ol", 24px, $background-brown, capitalize);
+            }
+            .textright{
+                @include text(16px, "ol", 24px, inherit, capitalize);
+            }
+        }
+    }
+    }
+}
+.thumnail__button-yellow{
+    background: $background-brown;
+    padding: 16px 51px;
+    @include text (14px, "or", 20px, inherit, initial);
+    text-decoration: none;
+    @include transition($t);
+    &:hover{
+        background: $white-cl;
+        color: $background-black-09;
+        @include transition($t)
+    }
+}
+.cover__btn-khamphathem{
+    display: flex;
+    .btn-khamphathem{   
+    @include text(14px, "or", 20px, inherit, initial);
+    padding: 21px 58px;
+    background: transparent;
+    border: 1px solid $background-brown;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    &:after{
+        content: "";
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        background: $Black-pearl-cl;
+        position: absolute;
+        @include mid;
+        z-index: -1;
+         @include transition($t);
+    }
+    &:hover{
+        &:after{
+            background: $white-cl;
+            @include transition($t);
+            background: $background-brown;
+        }
+    }
+    
+    }
+}
+.btn-khamphathem{   
+    @include text(14px, "or", 20px, inherit, initial);
+    padding: 21px 58px;
+    background: transparent;
+    border: 1px solid $background-brown;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    &:after{
+        content: "";
+        width: calc(100% - 6px);
+        height: calc(100% - 6px);
+        background: $Black-pearl-cl;
+        position: absolute;
+        @include mid;
+        z-index: -1;
+         @include transition($t);
+    }
+    &:hover{
+        &:after{
+            background: $white-cl;
+            @include transition($t);
+            background: $background-brown;
+        }
+    }
+    @include sm{
+        padding: 18px 48px;
+    }
+    
+}
+.btn-khamphathem-towrhombus{
+    @include text(14px, "or", 20px, $background-brown, initial);
+    text-decoration: none;
+    position: relative;
+    &:after, &:before{
+        position: absolute;
+        top: 50%;
+        content: "";
+        margin-inline: 11.3px;
+        background: $background-brown;
+        width: 8px;
+        height: 8px;
+        @include transform(translateY(-50%) rotate(45deg) scale(1));
+        @include transition($t);
+    }
+    &:after{
+        left: -30px;
+    }
+    &:before{
+        right: -30px;
+    }
+    &:hover{
+        &:after{
+            animation: towrhombus 0.5s forwards;
+            transition: $t;
+            margin-inline: -10%;
+            left: 10%;
+        }
+        &:before{
+            animation: towrhombus 0.4s forwards;
+            transition: $t;
+            margin-inline: -10%;
+            right: 10%;
+        }
+    }
+    @keyframes towrhombus{
+        0%{
+            opacity: 1;
+            @include transform(translateY(-50%) scale(1) rotate(45deg));
+        }
+        100%{
+            opacity: 0;
+            @include transform(translateY(-50%) scale(0) rotate(45deg));
+        }
+    }
+}
+.btn-towrhombus {
+    @include text(16px, "ol", 24px, $background-brown, uppercase);
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover{
+        &:after{
+            margin-left: 20px;
+            @include transition(0.8s);
+            opacity: 0;
+        }
+        &:before{
+            margin-right: 20px;
+            @include transition(0.8s);
+            opacity: 0;
+        }
+    }
+    &:before{
+        content: "";
+        margin-inline: 8px;
+        background: #B68C2D;
+        width: 8px;
+        height: 8px;
+        @include transform(rotate(45deg));
+        @include transition(0.8s);
+    }
+    &:after{
+        content: "";
+        margin-inline: 8px;
+        background: #B68C2D;
+        width: 8px;
+        height: 8px;
+        @include transform(rotate(45deg));
+        @include transition(0.8s);
+    }
+}
+.thumnail__heading{
+    &-title{
+        @include text(24px, "ci", 40px, $background-brown, initial); 
+        margin-bottom: 8px;
+    }
+    .--headingh2{
+        margin-bottom: 26px;
+    }
+    &-caption{
+        @include text(24px, "ci", 40px, inherit, initial); 
+        margin-bottom: 62px;
+    }
+}
+.title-section{
+    @include text(24px, "ci", 40px, $background-brown, capitalize);
+}
+.rhombus-rectangle{
+    cursor: pointer;
+    width: auto;
+    @include mid(true);
+    margin-bottom: 20px;
+    .rhombus{
+        width: 12.9px;
+        height:12.9px;
+        background: transparent;
+        border: 0.1px solid $background-brown;
+        @include transform(rotate(45deg));
+        position: relative;
+        &:after{
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: $background-brown;
+            @include mid;
+        }
+    }
+    .rectangle{
+        height: 1px;
+        width: 142px;
+        background-color: $background-brown;
+        margin-left: 2.7px;
+    }
+}
+.thumnail__card{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    &-item{
+        width: calc((100% - 48px)/ 3);
+        overflow: hidden;
+        .img{
+            display: flex;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+            @include transition($t);
+            &:hover{
+                    @include transform(scale(1.1));
+                     @include transition($t);
+                }
+            img{
+                @include midimg;
+                max-width: 100%;
+            }
+        }
+        .toppic{
+            padding: 27px 32px;
+            background: $background-black-09;
+            position: relative;
+            &:after{
+                    content: "";
+                    width: 134px;
+                    height: 1px;
+                    background: $background-brown;
+                    position: absolute;
+                    bottom: 27px;
+                    left: 0;
+                    @include transition(1s);
+                    transition-timing-function: ease-out;
+                }
+            &:hover{
+                &:after{
+                    width: 100%;
+                    @include transition(1s)
+                }
+            }
+            .title{
+                display: flex;
+                align-items: center;
+                .date{
+                    @include text(24px, "ci", 40px, $background-brown, initial);
+                    margin-right: 8px;
+                }
+                .rhombus-yellow{
+                    width: 4px;
+                    height: 4px;
+                    background: $background-brown;
+                    @include transform(rotate(45deg));
+                    margin-right: 8px;
+                }
+                .server{
+                    @include text(24px, "ci", 40px, $background-brown, initial);
+                }
+            }
+            .btn-heading{
+                margin-bottom: 18px;
+                .heading{
+                @include text(24px, "ol", 40px, inherit, initial);
+                text-decoration: none;
+                margin-bottom: 10px;
+            }
+            }
+        }
+    }
+    @include sm{
+        flex-wrap: wrap;
+        &-item{
+            width: calc(100% / 2 - 24px);
+            .toppic{
+                &:after{
+                        content: "";
+                        width: 134px;
+                        height: 1px;
+                        background: $background-brown;
+                        position: absolute;
+                        bottom: 27px;
+                        left: 0;
+                        @include transition(1s);
+                        transition-timing-function: ease-out;
+                }
+            &:hover{
+                &:after{
+                    width: 100%;
+                    @include transition(1s)
+                }
+            }
+            .title{
+                display: flex;
+                align-items: center;
+                .date{
+                    @include text(24px, "ci", 40px, $background-brown, initial);
+                    margin-right: 8px;
+                }
+                .rhombus-yellow{
+                    width: 4px;
+                    height: 4px;
+                    background: $background-brown;
+                    @include transform(rotate(45deg));
+                    margin-right: 8px;
+                }
+                .server{
+                    @include text(24px, "ci", 40px, $background-brown, initial);
+                }
+            }
+            .btn-heading{
+                margin-bottom: 18px;
+                .heading{
+                @include text(24px, "ol", 40px, inherit, initial);
+                text-decoration: none;
+                margin-bottom: 10px;
+            }
+            }
+        }
+        }
+    }
+    @include xs{
+        &-item{
+            width: 100%;
+            .toppic{
+                padding: 20px 20px;
+            .title{
+                .date{
+                    @include text(18px, "ci", 40px, $background-brown, initial);
+                    margin-right: 8px;
+                }
+                .rhombus-yellow{
+                    @include transform(rotate(45deg));
+                    margin-right: 8px;
+                }
+                .server{
+                    @include text(18px, "ci", 40px, $background-brown, initial);
+                }
+            }
+            .btn-heading{
+                margin-bottom: 18px;
+                .heading{
+                @include text(20px, "ol", 40px, inherit, initial);
+                margin-bottom: 10px;
+            }
+            }
+        }
+        }
+    }
+}
+.sliderthumnail__photo{
+    padding-top: 60px;
+    padding-bottom: 120px;
+    .flickity-viewport{
+        height: 120px !important;
+        
+    }
+    .flickity-slider{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .flickity-button{
+        display: none;
+    }
+    &-img{
+        .img{
+            margin-left: 136px;
+        }
+    }
+    .sliderthumnail__photo-pagedog{
+        @include mid(flase);
+        .flickity-page-dots{
+            overflow: hidden;
+            position: static;
+            width: calc(100%/3);
+            display: flex;
+            border-radius: 50px;
+            -moz-border-radius: 50px;
+            -webkit-border-radius: 50px;
+            -ms-border-radius: 50px;
+            -o-border-radius: 50px;
+            .dot{ 
+                width: 100%;
+                height: 10px;
+                border-radius: initial;
+                margin: 0;
+                background: rgb(47, 54, 61);
+                @include transition(0.8s);
+            }
+        }
+    }
+}
+.thumnail__number{
+    display: flex;
+    gap: 97px;
+    &-numberall{
+        .cover{
+            margin-top: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .numberyellow{
+                @include text(60px, "ol", normal, $background-brown, initial);
+            }
+            .total{
+                @include text(60px, "ol", normal, $background-brown, initial);
+            }
+        }
+        .text{
+            @include text(24px, "ci", 40px, inherit, initial);
+        }
+    }
+}
+.thumnail__choosetable {
+    width: calc(100% / 3);
+    padding-block: 36px;
+    position: relative;
+    border: 1px solid $background-brown;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    text-align: center;
+    background: #0e1317;
+    &-caption{
+        .title {
+        @include text(16px, "mr", 30px, inherit, capitalize);
+        }
+        .cost {
+            @include text(60px, "ol", normal, $background-brown, initial);  
+        }
+        .people {
+            @include text(18px, "mr", 30px, $background-brown, initial);  
+        }
+    }
+    .rhombus-rectangle {
+        width: 100%;
+        margin-bottom: 0;
+        .rhombus{
+            position: absolute
+        }
+        .rectangle{
+                width: 100%;
+        }
+    }
+    .thumnail__choosetable-menuservice {
+        .premium{
+            @include text(24px, "ol", 40px, inherit, initial);
+            margin-bottom: 21px;
+            &:last-child{
+                margin-bottom: 0;
+            }  
+        }
+    }
+    .btn.btn-khamphathem {
+        padding: 16px 59px;
+    }
+    .img__bg {
+        position: relative;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        width: 38px;
+        img{
+            @include midimg;
+        }
+    }
+    @include sm{
+        &-caption{
+        .cost {
+            @include text(45px, "ol", normal, $background-brown, initial);  
+        }
+        }
+        .thumnail__choosetable-menuservice {
+            .premium{
+                @include text(18px, "ol", 40px, inherit, initial);
+                margin-bottom: 21px;
+                &:last-child{
+                    margin-bottom: 0;
+                }  
+            }
+        }
+    }
+    @include xs{
+        &-caption{
+        .cost {
+            @include text(40px, "ol", normal, $background-brown, initial);  
+        }
+        }
+    }
+}
+.thumnail__form{
+    grid-column: 1/7;
+    display: flex;
+    justify-content: space-between;
+    background: $background-black-15;
+    .img{
+        width: 178px;
+        min-height: 542px;
+        position: relative;
+        overflow: hidden;
+        img{
+            @include midimg;
+        }
+    }
+    &-make{
+        background: $background-black-09;
+        padding-inline: 32px;
+        display: flex;
+        flex-direction: column;
+        .heading{
+            width: 100%;
+            text-align: center;
+            @include text(24px, "mr", 40px, $background-brown, initial);
+            margin-top: 60px;
+        }
+        .form{
+            
+            margin-block: 32px;
+            --height-input: 38px;
+            &__wraper{
+                margin-bottom: 16px;
+                position: relative;
+                width: 100%;
+                height: var(--height-input);
+                &-label{
+                    height: 100%;
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    @include transform(translateY(-50%));
+                    @include text(14px, "mr", 30px, inherit, initial);
+                    pointer-events: none;
+                    transition: all 0.25s linear;
+                }
+                &-input{
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    border-bottom: 1px solid $white-cl;
+                    outline: none;
+                    background: transparent;
+                    transition: 0.4s;
+                }
+                &-input:focus + .form__wraper-label{
+                    height: 100%;
+                    top: 0px;   
+                    background: transparent;
+                    @include text(10px, "mr", 30px, inherit, initial);
+                }
+                &-input:focus{
+                    color: $white-cl;
+                }
+            }
+            .people{
+                margin-bottom: 16px;
+                width: 100%;
+                height: var(--height-input);
+                background: transparent;
+                @include text(14px, "mr", 30px, inherit, initial);
+                border: none;
+                border-bottom: 1px solid $white-cl;
+                option{
+                    @include text(14px, "mr", 30px, inherit, initial);
+                    background: $background-black-09;
+                }
+                &:focus{
+                    outline: none;
+                    background: $background-black-09;
+                }
+            }
+            .date{
+                text-align: start;
+                display: inline-block;
+                margin-bottom: 16px;
+                width: 100%;
+                height: var(--height-input);
+                background: transparent url(../img/icon_date.png);
+                background-repeat: no-repeat;
+                background-position: 99%;
+                @include text(14px, "mr", 30px, inherit, initial);
+                border: none;
+                border-bottom: 1px solid $white-cl;
+                &:focus{
+                border: none;
+                outline: none;
+                border-bottom: 1px solid $white-cl;
+                }
+                &::-webkit-calendar-picker-indicator{
+                    opacity: 0;
+                }   
+            }
+            .time{
+                width: 100%;
+                height: var(--height-input);
+                background: transparent;
+                @include text(14px, "mr", 30px, inherit, initial);
+                border: none;
+                border-bottom: 1px solid $white-cl;
+                option{
+                    @include text(14px, "mr", 30px, inherit, initial);
+                }
+                &:focus{
+                    border: none;
+                    outline: none;
+                    background: $background-black-09;
+                    border-bottom: 1px solid $white-cl;
+                }
+            }
+        }
+        .thumnail__button-yellow{
+            text-align: center;
+            width: 276px;
+        }
+
+    }
+}
+.menumobile{
+    .hide_opacity{
+        float: right;
+        width: 60%;
+        height: 100%;
+    }
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 5,0.8);
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+    &.active{
+        visibility: visible;
+        @include transition($t);
+    } 
+    &__nav {
+        position: relative;
+        position: absolute;
+        transition: 0.5s;
+        left: -100%;
+        width: 40%;
+        height: 100%;
+        padding-inline: 20px;
+        background: $background-black-09;
+        min-width: 200px;
+        &.active{
+            left: 0px;
+            transition: 0.5s;
+        }
+        .icon-mobile{
+            position: relative;
+            position: absolute;
+            top: 19px;
+            right: -55px;
+            width: 20px;
+            height: 20px;
+            &.active{
+                &:before{
+                    transform: rotate(45deg) translate(6px, 6px);
+                    @include transition(0.8s);
+                    transition-timing-function: ease;
+                    transition-delay: 0s;
+                }
+                span{
+                    opacity: 0;
+                    visibility: hidden; 
+                    @include transition(0.8s);
+                    transition-timing-function: ease;
+                }
+                &:after{
+                    bottom: 0;
+                    transform: rotate(-45deg) translate(6px, -6px);
+                    @include transition(0.8s);
+                    transition-timing-function: ease;
+                }
+
+            }
+            &:before{
+                    top: 0;
+                    transform: rotate(0deg) translate(0px, 0px);
+                }
+                &:after{
+                    bottom: 0;
+                    transform: rotate(0deg) translate(0px, 0px);
+                }
+                span{
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            &:after, &:before, span {
+                content: '';
+                width: 100%;
+                height: 2px;
+                background: $background-brown;
+                position: absolute;
+                @include transition($t);
+                border-radius: 10px;
+            }
+        }
+        .menumobile__logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            gap: 10px;
+            margin-block: 20px;
+            .img {
+                width: 44px;
+                height: 44px;
+                overflow: hidden;
+                position: relative;
+                img {
+                    @include midimg;
+                    max-width: 100%;
+                }
+                }
+            .text {
+                width: 127px;
+                height: 22px;
+                overflow: hidden;
+                position: relative;
+                img {
+                    @include midimg;
+                    max-width: 100%;
+                }
+                }
+        }
+        .menumobile__nav-cover{
+            margin-block: 2px;
+            position: relative;
+            .accodian{
+                @include text(15px, "ol", 35px, $white-cl, capitalize);
+                letter-spacing: 0.32px;
+                display: block;
+                width: 100%;
+                height: 35px;
+                background: inherit;
+                cursor: pointer;
+                border: none;
+                text-align: left;
+                outline: none;
+                text-decoration: none;
+                &:hover{
+                    opacity: 0.4;
+                }
+                &.active{
+                    color: $background-brown;
+                }
+            }
+            .img{
+                position: absolute;
+                top: 0;
+                right: 0px;
+                width: 35px;
+                height: 35px;
+                overflow: hidden;
+                background: #595A5A;
+                opacity: 0.2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include transform(rotate(-90deg));
+                &.active{
+                    opacity: 0.7;
+                    img{
+                        @include transform(rotate(90deg));
+                        @include transition(0.5s)
+                    } 
+                }
+                img{
+                    width: 10px;
+                    height: 10px;
+                    @include transition(0.5s);
+                }
+            }
+        }
+       .panel{
+                transition: max-height 0.5s ease-in-out;
+                max-height: 0px;
+                padding: 0 18px;
+                overflow: hidden;   
+            }
+    }
+}

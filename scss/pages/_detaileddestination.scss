@@ -1,0 +1,45 @@
+.gifts{
+    padding-top: 120px;
+    padding-bottom: 80px;
+    @include sm{
+        padding-block: 50px;
+    }
+    @include xxs{
+        padding-top: 50px;
+        padding-bottom: 50px;
+        .gifts__title{
+            grid-column: 1/13;
+        }
+        .gifts__img{
+            grid-column: 1/13;
+        }
+    }
+}
+.otherservices {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    @include sm{
+        padding-top: 50px;
+        padding-bottom: 0px;
+        .otherservices__cover{
+            grid-column: 2/12;
+            &-left{
+                // gap: ;
+                .botton{
+                    font-size: 12px;
+                }
+            }
+            .otherservices__cover-share{
+                margin-top: 5px;
+                width: 28px;
+                height: 28px;
+            }
+        }
+        .otherservices__dish{
+            grid-column: 2/12;
+        }
+        .otherservices__wrap{
+            grid-column: 2/12;
+        }
+    }
+}

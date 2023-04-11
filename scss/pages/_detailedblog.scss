@@ -1,0 +1,20 @@
+.bottom {
+    padding-block: 120px;
+    &__cover {
+      .otherservices {
+        padding-top: 50px;
+        padding-bottom: 0px;
+      }
+      .dominicana{
+        .img{
+            margin-bottom: 88px;
+        }
+      }
+    }
+    @include sm{
+      padding-block: 90px;
+    }
+    @include xs{
+      padding-block: 30px;
+    }
+}

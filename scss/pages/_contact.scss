@@ -1,0 +1,159 @@
+.contact {
+  padding-top: 125px;
+  padding-bottom: 115px;
+  .container {
+      display: grid;
+      grid-template-columns: repeat(12,1fr);
+      .thumnail__form{
+          grid-column: 1/7;
+      }
+      .contactus {
+        grid-column: 8/13;
+          &__top {
+            margin-bottom: 16px;
+            .title-section {
+            }
+            .--headingh2 {
+            }
+            .rhombus-rectangle {
+              justify-content: flex-start;
+              .rhombus{
+                margin-left: 2px
+              }
+            }
+            .text {
+              @include text(16px, "mr", 30px, inherit, initial);
+            }
+          }
+          &__contactinfo {
+            margin-bottom: 16px;
+            .contactus__contactinfo-text {
+              display: flex;
+              gap: 22px;
+              .icon {
+                width: 40px;
+                height: 40px;
+                margin: 20px;
+                overflow: hidden;
+                position: relative;
+                img {
+                  @include midimg;
+                }
+              }
+              .right {
+              }
+              .title {
+                @include text(24px, "ol", 40px, inherit, initial);
+              }
+              .locaition {
+                @include text(16px, "mr", 30px, inherit, initial);
+              }
+            }
+          }
+        .contactus_bottom {
+          display: flex;
+          gap: 16px;
+          .icon {
+            width: 32px;
+            height: 32px;
+            overflow: hidden;
+            position: relative;
+            background: $background-brown;
+            border-radius: 32px;
+            &:hover{
+              svg{
+                path{
+                  stroke: $white-cl;
+                  @include transition($t);
+                }
+              }
+            }
+            svg {
+              @include midimg;
+              path{
+                stroke: transparent;
+                @include transition($t);
+              }
+            }
+          }
+        }
+      } 
+  }
+  @include sm{
+    padding-top: 125px;
+    padding-bottom: 115px;
+    .container {
+        display: grid;
+        grid-template-columns: repeat(12 ,1fr);
+        grid-template-rows: auto;
+        .thumnail__form{
+            grid-column: 1/13;
+            grid-row: 2/3;
+            .thumnail__form-make{
+              flex-grow: 1;
+              align-items: center;
+            }
+        }
+        .contactus {
+          grid-column: 1/13;
+          margin-bottom: 30px;
+        } 
+    }
+  }
+  @include xxs{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .container {
+        .thumnail__form{
+          .img{
+            display: none;
+          }
+            .thumnail__form-make{
+              width: 100%;
+              flex-grow: 1;
+              align-items: center;
+            }
+            .thumnail__button-yellow{
+              width: 100%;
+              margin-bottom: 60px;
+            }
+        }
+        .contactus {
+          grid-column: 1/13;
+          margin-bottom: 30px;
+          .contactus__contactinfo{
+              .contactus__contactinfo-text{
+                .icon{
+                  width: 30px;
+                  height: 30px;
+                }
+                .right{
+                  .title{
+                    font-size: 20px;
+                  }
+                  .locaition{
+                    font-size: 14px;
+                  }
+                }
+              }
+          }
+          .contactus_bottom{
+            gap: 24px;
+          }
+        } 
+    }
+  }
+}
+.ggmap {
+    width: 100%;
+    padding-inline: 30px;
+    &__iframe {
+        filter: grayscale(80%);
+        width: 100%;
+        height: 468px;
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+}

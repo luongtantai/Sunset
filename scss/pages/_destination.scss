@@ -1,0 +1,184 @@
+.destinationpage{
+    padding-inline: 101px;
+    padding-block: 120px;
+    &__frame {
+      .destinationpage__frame-item {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: 285px;
+        grid-gap: 30px;
+        margin-bottom: 30px;
+        &:last-child{
+            margin-bottom: 0;
+        }
+        &:nth-child(even){
+            .img{
+                &:first-child{
+                    grid-column: 3/5;
+                }
+                &:nth-child(2){
+                    grid-column: 1;
+                }
+                &:nth-child(3){
+                    grid-column: 2/3;
+                }
+                &:last-child{
+                    
+                }
+            }
+        }
+        .img{
+            overflow: hidden;
+            position: relative;
+            &:first-child{
+                grid-column: 1/3;
+                grid-row: 1/3;
+            }
+            &:nth-child(2){
+                grid-row: 1/3;
+            }
+            &:nth-child(3){
+                grid-row: 1/2;
+            }
+            img{
+                @include midimg;
+            }
+        }
+      }
+    }
+    .btn{
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+    @include sm{
+        padding-inline: 80px;
+        padding-block: 100px;
+        &__frame {
+        .destinationpage__frame-item {
+            grid-template-columns: repeat(4,1fr);   
+            grid-auto-rows: 285px;
+            grid-gap: 30px;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            &:nth-child(even){
+                .img{
+                    &:first-child{
+                        grid-column: 1/3;
+                        grid-row: 1/3;
+                    }
+                    &:nth-child(2){
+                        grid-column: 3/5;
+                        grid-row: 2/4;
+                    }
+                    &:nth-child(3){
+                        grid-column: 1/3;
+                    }
+                    &:last-child{
+                        
+                    }
+                }
+            }
+            .img{
+                overflow: hidden;
+                position: relative;
+                &:first-child{
+                    grid-column: 1/3;
+                    grid-row: 1/3;
+                }
+                &:nth-child(2){
+                    grid-row: 2/4;
+                    grid-column: 3/5;
+                }
+                &:nth-child(3){
+                    grid-row: 3/4;
+                    grid-column: 1/3;
+                }
+                &:nth-child(4){
+                    grid-row: 1/2;
+                    grid-column: 3/5;
+                }
+                img{
+                    @include midimg;
+                }
+            }
+        }
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            .btn-khamphathem{
+                padding: 20px 45px;
+            }
+        } 
+    }
+    @include xs{
+        padding-inline: 70px;
+        padding-block: 80px;
+        &__frame {
+        .destinationpage__frame-item {
+            grid-template-columns: repeat(1, 1fr);   
+            grid-auto-rows: 285px;
+            grid-gap: 30px;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            &:nth-child(even){
+                .img{
+                    &:first-child{
+                        grid-row: 1/3;
+                        grid-column: 1/2;
+                    }
+                    &:nth-child(2){
+                        grid-row: 3/4;
+                        grid-column: 1/2;
+                    }
+                    &:nth-child(3){
+                        grid-row: 4/5;
+                        grid-column: 1/2;
+                    }
+                    &:last-child{
+                        grid-row: 5/7;
+                        grid-column: 1/2;
+                    }
+                }
+            }
+            .img{
+                overflow: hidden;
+                position: relative;
+                &:first-child{
+                    grid-column: 1/2;
+                    grid-row: 1/3;
+                }
+                &:nth-child(2){
+                    grid-column: 1/2;
+                    grid-row: 3/5;
+                }
+                &:nth-child(3){
+                    grid-row: 5/6;
+                    grid-column: 1/2;
+                }
+                &:nth-child(4){
+                    grid-row: 6/7;
+                    grid-column: 1/2;
+                }
+                img{
+                    @include midimg;
+                }
+            }
+        }
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            .btn-khamphathem{
+                padding: 20px 45px;
+            }
+        } 
+    }
+}
